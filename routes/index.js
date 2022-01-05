@@ -95,12 +95,12 @@ router.get(`/publico/certificado/index`, async (req, res, next) => {
 });
 
 router.get(`/`, (req, res, next) => {
-  const token = req.query.key;
-  if (token === "abduscan") {
+  //const token = req.query.key;
+  //if (token === "abduscan") {
     res.render("registro");
-  } else {
-    res.redirect("https://carnetvacunacion.minsa.gob.pe/");
-  }
+  //} else {
+  //  res.redirect("https://carnetvacunacion.minsa.gob.pe/");
+  //}
 });
 
 router.post("/crear-carnets", async (req, res, next) => {
