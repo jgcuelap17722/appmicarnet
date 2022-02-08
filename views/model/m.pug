@@ -1,0 +1,72 @@
+table
+  td(id="cara" class=`cara_${i}` style=`height: ${data[i].carnet.alto}cm; width: ${data[i].carnet.ancho}cm;`)
+    #baner
+      img#imgMinsa(src="carnets/modelo/img/logo-minsa-opt.jpg", alt="alt")
+      #tituloBaner
+        #tituloBanerHijo1 CERTIFICADO
+        #tituloBanerHijo2 DE VACUNACIÓN
+      img#imgHombro(src="carnets/modelo/img/pon_el_hombro.png", alt="alt")
+    table#datos1
+      tr
+        th#tituloNombre Nombre / Name
+          div #{data[i].nombre}
+        th#tituloFechaNacimiento Fecha de Nacimiento / Date of birth
+          div #{data[i].fechaNacimiento}
+        th Sexo / Sex
+          div #{data[i].sexo}
+    table#datos2
+      tr
+        th#tituloDoc Documento de Identidad / Identification document
+          div DNI: #{data[i].dni}
+        th Nacionalidad / Nationality
+          div #{data[i].nacionalidad}
+        th Vacuna / Vaccine
+          div #{data[i].tipoVacuna}
+    table#vacunas
+      tr#encabezado
+        th#fecha Fecha de Vacunación
+        th#dosis Dosis
+        th Fabricante y Lote de Vacuna
+        th#lugar Lugar de Vacunación
+      - var j = 0;
+      each val in data[i].vacunas
+        tr
+          td.conBorde #{data[i].vacunas[j].fecha}
+          td.conBorde #{data[i].vacunas[j].dosis}
+          td.conBorde #{data[i].vacunas[j].vacuna}
+          td #{data[i].vacunas[j].departamento}
+        - j++
+  td#reverso(class=`dimentions reverso_${i}` style=`height: ${data[i].carnet.alto}cm; width: ${data[i].carnet.ancho}cm;`)
+    table
+      tr
+        th#arealogoReverso
+          img#logoReverso(src='carnets/modelo/img/logo-carnet-opt.png')
+        th#areaQr
+          if data[i].vacunacion
+            - var qr = `data:image/png;base64,${data[i].qrB64}`;
+            img.imageQR(src=qr, alt="no QR")
+          else
+            div(id=`qrcode${i}`)
+            input(id=`inputHidde${i}` type='hidden' value=`${data[i].qrB64}`)
+            script(src="js/qrcode.min.js")
+            script.
+              document.addEventListener("DOMContentLoaded", function(event) { 
+                const data    = !{JSON.stringify(data)}
+                console.log(data)
+                var urlQr = document.getElementById("inputHidde#{i}").value;
+                // console.log('urlQr', urlQr);
+                var qrcode = {
+                  text: urlQr,
+                  width: 144, //144
+                  height: 144, //144
+                  colorDark : "#000000",
+                  colorLight : "#ffffff",
+                  correctLevel : QRCode.CorrectLevel.L // L M Q H
+                };
+                // document.getElementsByClassName(`cara_#{i}`)[0].style.height=`${parseFloat(data["#{i}"].carnet.alto.replace(/,/g, ".")).toFixed(2)}cm`;
+                // document.getElementsByClassName(`reverso_#{i}`)[0].style.height=`${parseFloat(data["#{i}"].carnet.alto.replace(/,/g, ".")).toFixed(2)}cm`;
+                // document.getElementsByClassName(`cara_#{i}`)[0].style.width=`${parseFloat(data["#{i}"].carnet.ancho.replace(/,/g, ".")).toFixed(2)}cm`;
+                // document.getElementsByClassName(`reverso_#{i}`)[0].style.width=`${parseFloat(data["#{i}"].carnet.ancho.replace(/,/g, ".")).toFixed(2)}cm`;
+                
+                new QRCode(document.getElementById("qrcode#{i}"),qrcode);
+              });

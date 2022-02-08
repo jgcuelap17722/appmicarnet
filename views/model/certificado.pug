@@ -43,18 +43,30 @@ html(lang="es")
   body
     #japp.app
       .aContainer
+        .text-center
+          img(src="https://carnetvacunacion.minsa.gob.pe/static/img/logo-minsa-opt.jpg", alt="Logo Minsa", width="220", style="max-width: 15rem; width: 100%; border: #fff solid 1px")
         .aLogo
           img.aLogoImg(src="../../MINSA - Carnet Vacunación_files/logo-carnet-opt.png", alt="Logo Carnet de Vacunación - MINSA")
         .text-center(style="padding:2rem 0.5rem")
           div
-            img(src="../../MINSA - Carnet Vacunación_files/comprobado.png")
+            if nroDosis < 2
+              img(src="../../MINSA - Carnet Vacunación_files/cancelar.png")
+            else
+              img(src="../../MINSA - Carnet Vacunación_files/comprobado.png")
           div(style="font-size:1.2rem; padding:0.5rem; background: rgba(255,255,255, 0.7); line-height: 2rem; color: #1f484a;")
             div #{nombre}
             div
               b DNI
               |  #{dni}
-            div(style="color:#3e8d5e")
-              b DOSIS COMPLETA
+            if nroDosis < 2
+              div(style="color:#dead28")
+                b DOSIS INCOMPLETA *
+            else
+              div(style="color:#3e8d5e")
+                b DOSIS COMPLETA
+        if nroDosis < 2
+          div(style="padding: 0.7rem 0 0.5rem; text-align: center;")
+            div(style="font-size: 1rem;padding:0.5rem;background: rgba(255,255,255, 0.7);") * Persona con sólo una dosis de vacuna contra COVID 19
         hr.aLine1
         .text-center(style="color:#6c6c6c")
           | Copyright © 2021. Desarrollado por la Oficina General de Tecnologías de la Información del Ministerio de Salud | Todos los derechos reservados.

@@ -1,0 +1,33 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    link(rel="stylesheet", href="./carnets/modelo/css/modelo.css")
+    link(rel="stylesheet", href="./carnets/modelo_2/css/modelo_2.css")
+    link(rel="stylesheet", href="./carnets/modelo_3/css/modelo_3.css")
+  style.
+    body {
+      font-family: arial, sans-serif;
+      padding: 0cm;
+      margin: 0cm;
+      font-weight: bold;
+    }
+    #mainTable {
+      height: 6.5cm;
+    }
+    html {
+      zoom: 1.24;
+    }
+body
+- var i = 0;
+  each val in data
+    if data[i].carnet.modelo == "1"
+      #mainTable
+        include ./model/m
+    if data[i].carnet.modelo == "2"
+      #mainTable
+        include ./model/m2
+    if data[i].carnet.modelo == "3"
+      #mainTable
+        include ./model/m3
+    - i++

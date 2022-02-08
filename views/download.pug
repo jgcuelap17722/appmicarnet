@@ -6,12 +6,14 @@ html(lang='es')
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(name="theme-color", content="#b7e3e4")
     title Descargas
-    script(src='/socket.io/socket.io.js')
-    link(href='lib/Bootstrap 4.3.1/css/bootstrap.min.css',rel='stylesheet')
+    script(src='../socket.io/socket.io.js')
+    link(href='../lib/Bootstrap 4.3.1/css/bootstrap.min.css',rel='stylesheet')
     link(rel="icon" href="img/favicon.ico")
-    script(type='text/javascript', src='lib/jquery 3.4.1/dist/jquery.min.js')
+    script(type='text/javascript', src='../lib/jquery 3.4.1/dist/jquery.min.js')
   body
     .container
+      .card.text-center
+        a#btnRegresar.btn.btn-success(href=`/?key=abduscan` type='button') Regresar
       .row#contenedorArchibos
         - var i = 0;
         each val in data
@@ -55,7 +57,9 @@ html(lang='es')
         sk_formDownload.on('Archibo_Descargado', (data) => {
           alert('Se descargo el archibo :D')
         });
-        
+        $('#btnRegresar').click(() => {
+          window.location.href='/';
+        });
         listarARchibos = (data) => {
           console.log(data);
           for (const el of data){

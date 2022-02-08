@@ -1,0 +1,206 @@
+#cara_modelo3,
+#reverso_modelo3 {
+  padding: 0px;
+  border-radius: 7px;
+  border: 1px solid silver;
+}
+#cara_modelo3 {
+  /* background-color: #cdebed7d; */
+  background-color: #cdebed34;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*   background-image: url("../img/bgBottomLeft-optw.png"),
+    url("../../modelo_3/img/logo_carnet_de_vacunacion_blanco.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 24%, 85%;
+  background-position: bottom left, center; */
+}
+#reverso_modelo3 {
+  /*   background-color: #cdebed34;
+  background-image: url("../img/bgBottomLeft-optw.png"),
+    url("../img/bgTopLeft-optw.png"), url("../img/bgBottomRight-optw.png"),
+    url("../../modelo_3/img/logo_carnet_de_vacunacion_blanco.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 40% 32%, 38% 50%, 25% 50%, 85%;
+  background-position: bottom left, top left, bottom right, center; */
+}
+#logo_modelo3 {
+  position: relative;
+  /*height: 1cm;*/
+  height: 18.4%;
+}
+#banerReverso_modelo3 {
+  position: relative;
+  /*height: 1cm;*/
+  height: 22%;
+}
+
+#imgCarnetVacunacion_modelo3 {
+  position: absolute;
+  height: 85%;
+  transform: translate(-50%, -50%);
+}
+#imgInjeccion_modelo3 {
+  /* position: absolute; */
+  /* top: 67%;
+  left: 3%; */
+  /* transform: translate(-1000%, 1%); */
+  height: 18px;
+}
+#imgEscudo_modelo3 {
+  position: absolute;
+  height: 25%;
+  top: 71%;
+  left: 4%;
+  z-index: 2;
+}
+#areaTituloVacunas_modelo3 {
+  position: absolute;
+  top: 52%;
+}
+#tituloVacunas_modelo3 {
+  font-size: 0.6rem;
+  color: #1f4e79;
+}
+#contenedorFilaPrincipal_modelo3 {
+  display: flex;
+  flex-direction: row;
+}
+#cara_modelo3 {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid silver;
+  border-radius: 7px;
+  padding: 0px;
+  background-color: #e4edef;
+  background-image: url("../img/pon_el_hombro.png"),
+    url("../img/logo_ministerio.jpg"), url("../img/franja_top.png"),
+    url("../img/franja_botom.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 23%, 22%, 100% 25%, 100% 30%;
+  background-position: 0px 1px, 98% 2px, top, bottom;
+}
+
+#reverso_modelo3 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid silver;
+  border-radius: 7px;
+  padding: 0px;
+  margin-left: 2px;
+  background-color: #e4edef;
+  background-image: url("../img/logo_ministerio.jpg"),
+    url("../img/logo_carnet_de_vacunacion_blanco.png"),
+    url("../img/franja_top_reverso.png"), url("../img/franja_botom_reverso.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 35%, 85%, 100% 25%, 100% 30%;
+  background-position: 98% 2px, center, top, bottom;
+}
+#contenedorVacuna_modelo3 {
+  width: 42%;
+}
+#contenedorNacionalidad_modelo3 {
+  width: 42%;
+}
+#contenedorNombre_modelo3 {
+  width: 68%;
+}
+#contenedorAvatar_modelo3 {
+  width: 1%;
+}
+#avatar_modelo3 {
+  height: 25px;
+}
+#areaQr_modelo3 {
+  position: relative;
+  width: 30%;
+  border-left: 1px solid #d82e41;
+}
+#qr_modelo3 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#imgQr_modelo3 {
+  width: 100%;
+}
+#areaInformacion_modelo3 {
+  position: absolute;
+  top: 57.5%;
+  height: 82%;
+  transform: translateY(-50%);
+  text-align: left;
+  font-size: 8px;
+  color: #1f4e79;
+  border: 1px solid silver;
+  background-color: #ffffff7f;
+  border-radius: 10px;
+  margin: 2px;
+  z-index: 2;
+}
+.informacion_modelo3 {
+  color: black;
+}
+.areaTexto_modelo3 {
+/*   display: flex;
+  align-items: center; */
+  height: 33.33%;
+  /* display: block; */
+  width: 100%;
+  /* border-bottom: 1px solid #d82e41; */
+}
+
+#modelo_3 table {
+  /* border-spacing: 2.5px; */
+  border-spacing: 1.5px;
+}
+
+#areaTextoSexo_modelo3 {
+  display: block;
+  margin-left: 75%;
+}
+#contenedorVacunas_modelo3 {
+  /* display: flex; */
+  padding: 0px;
+}
+#vacunas_modelo3 {
+  /*height: 1.7cm;*/
+  /* height: 33.33%; */
+  height: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+#vacunas_modelo3 td {
+  /*padding: 3px 1px 0px 5px;*/
+  /* padding-top: 0.5em; */
+  font-size: 7px;
+  color: black;
+}
+#encabezadoVacunas_modelo3 {
+  /* height: 3em; */
+  color: #1f4e79;
+  font-size: 7px;
+  border-top: 1.5px solid #1f4e79;
+  background-color: #cdebed;
+}
+
+#fecha_modelo3 {
+  padding-left: 5px;
+  /* width: 1em; */
+  width: 18%;
+}
+#dosis_modelo3 {
+  width: 11%;
+}
+#lugar_modelo3 {
+  width: 29%;
+}
+.conBorde_modelo3 {
+  border-right: 2px solid #e2e2e2;
+}
+#mainTable_modelo3 {
+  height: 6.5cm;
+}

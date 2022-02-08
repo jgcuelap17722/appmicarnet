@@ -1,0 +1,310 @@
+doctype
+html
+  head
+    meta(charset='utf-8')
+    style.
+      html{zoom: 1.24;}
+      body {
+        padding: 0cm;
+        margin: 0cm;
+      }
+      #tablaPrincipal {
+        margin-top: 0.9cm;
+      }
+      .dimentions {
+        font-family: arial, sans-serif;
+        width: 100%;
+        font-weight: bold;
+      }
+      #cara, #reverso{
+        position: relative;
+        border-color: silver silver silver silver;
+        border-width: 1px 1px 1px 1px;
+        border-style: solid solid solid solid;
+        height: 100%;
+      }
+
+      #datos1, #datos2 {
+        border-collapse: separate ;
+        width: 100%;
+        vertical-align: top;
+        text-align: left;
+        padding: 0px 8px 0px 8px;
+        border-spacing:0px;
+      }
+      #logo {
+        position:absolute;
+        background-image: url("img/modelo_2/franja_top.png");
+        background-repeat: no-repeat;
+        background-size: 100% 125%;
+        background-position: top left;
+        /*height: 1cm;*/
+        height: 18.4%;
+      }
+      #datos1 {
+        border-color: white silver white silver;
+        padding-top: 6px;
+        /*height: 1.1cm;*/
+        height: 21.6%;
+        padding-bottom: 3px;
+        /*background-image: url("img/modelo_2/pon_el_hombro.png");
+        background-repeat: no-repeat;
+        background-size: 15% 80%;
+        background-position: top left;*/
+      }
+      #datos2 {
+        border-top: 2px solid #E2E2E2;
+        padding-top: 3px;
+        /*height: 1.3cm;*/
+        height: 27%;
+        padding-bottom: 6px;
+      }
+
+      #vacunas {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        /*height: 1.7cm;*/
+        height: 33.33%;
+        text-align: center;
+        background-image: url("img/modelo_2/franja_botom.png");
+        background-repeat: no-repeat;
+        background-size: 25% 50%;
+        background-position: bottom left;
+      }
+      #datos1 tr th, #datos2 tr th {
+        padding: 0px 2px 0px 0px;
+        font-size: 8px;
+        color: #1F4E79;
+      }
+      #datos1 tr th div, #datos2 tr th div {
+        margin-top: 1px;
+        padding: 0px 2px 0px 0px;
+        font-size: 9px;
+        color: black;
+      }
+      #datos1 tr td, #datos2 tr td {
+        padding: 0px 2px 0px 0px;
+        font-size: 9px;
+        /*vertical-align: text-top;*/
+      }
+
+      #tituloNombre, #tituloDoc {
+        display:inline-block;
+        /*width: 3.4cm;*/
+        width: 1%;
+        white-space: nowrap;
+      }
+      #tituloFechaNacimiento {
+        width: 2.6cm;
+      }
+
+      #tipoVacuna {
+        width: 2cm;
+      }
+      /*-----------------------------------------*/
+      .conBorde {
+        border-right: 2px solid #E2E2E2;
+      }
+      #vacunas td {
+        /*padding: 3px 1px 0px 5px;*/
+        font-size: 7.5px;
+      }
+      #encabezado {
+        height: 1em;
+        color: #1F4E79;
+        font-size: 8px;
+        border-top: 1.5px solid #1F4E79;
+        background-color: #CDEBED;
+      }
+      #fecha{
+        padding-left: 5px;
+        width: 1em;
+      }
+      #dosis{
+        width: 1cm;
+      }
+      #lugar{
+        width: auto;
+      }
+      
+      #areaImgMinsa {
+        position:relative;
+        width: 45%
+      }
+
+      #logoMinsa {
+        position:absolute;
+        top:1px;
+        left: 3px;
+        height: 90%;/*0.75cm;*/
+        width: 35%;/*3.2cm;*/
+      }
+      #primario {
+        width: 2cm;
+      }
+      #primarioHijo1 {
+        font-size: 11px;
+        text-align: center;
+        letter-spacing: 1.5px;
+        color:#1F4E79;
+        width: 2.8cm;
+      }
+      #primarioHijo2 {
+        color:white;
+        font-size: 11px;
+        text-align: left;
+        letter-spacing: 0.3px;
+        background-color: #2E75B6;
+        padding: 1px 3px 1px 3px;
+        width: 3cm;
+      }
+      #areaImgVacuna {
+        position:relative;
+        width: 32%;
+      }
+      #logoVacuna {
+        position:absolute;
+        top:0px;
+        /*right: -6px;*/
+        height: 0.37cm;
+        width: 50%;
+      }
+      #reverso {
+        display: none;
+        background-image: url("img/modelo_2/franja_botom.png");
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-size: 40% 32%, 38% 50%, 25% 50%;
+        background-position: bottom left, top left, bottom right;
+      }
+      #arealogoReverso {
+        width: 40%;
+        height: 100%;
+        /*border-color: silver silver silver silver;
+        border-width: 1px 1px 1px 1px;
+        border-style: solid solid solid solid;*/
+      }
+      #logoReverso {
+        width: 85%;
+      }
+      #areaQr {
+        width: 60%;
+        /*border-color: silver silver silver silver;
+        border-width: 1px 1px 1px 1px;
+        border-style: solid solid solid solid;*/
+      }
+      .imageQR {
+        width: 85%;
+      }
+      /*----*/
+      #contenedorAvatar {
+        width: 10%;
+        /*display: inline;*/
+      }
+      #avatar {
+        width: 100%;
+        height: 100%;
+      }
+      #imgQrCara {
+        
+      }
+      #qrCara {
+        width: 60%;
+        height: 50%;
+      }
+  body
+    - var i = 0;
+    each val in data
+      table#tablaPrincipal
+        td(id="cara" class=`cara_${i}` style=`height: ${data[i].carnet.alto}cm; width: ${data[i].carnet.ancho}cm;`)
+          table
+            tr
+              table#logo.dimentions
+                tr
+                  th#areaImgMinsa
+                    img#logoMinsa(src='img/modelo_2/pon_el_hombro.png')
+                  th#areaImgVacuna
+                    img#logoVacuna(src='img/modelo_2/logo_ministerio.jpg')
+            tr(style="position:absolute;")
+              table
+                tr
+                  td 
+                    table 
+                      tr
+                        th#contenedorAvatar
+                          img#avatar(src='img/modelo_2/user-1-opt.png')
+                        th
+                          div NOMBRE
+                          div #{data[i].nombre}
+                    table
+                      tr  
+                        th
+                          div Fecha de Nacimiento 
+                          div #{data[i].fechaNacimiento}
+                        th Sexo
+                          div #{data[i].sexo}
+                    table
+                      tr
+                        th Documento de Identidad
+                          div DNI: #{data[i].dni}
+                        th Nacionalidad
+                          div #{data[i].nacionalidad}
+                    table
+                      tr
+                        th VACUNA
+                          div #{data[i].tipoVacuna}
+                  td 
+                    table 
+                      tr 
+                        th#imgQrCara
+                          img#qrCara(src='img/modelo_2/qrprueba.png')          
+            tr
+              table#vacunas.dimentions
+                tr#encabezado
+                  th#fecha Fecha de Vacunación
+                  th#dosis Dosis
+                  th Fabricante y Lote de Vacuna
+                  th#lugar Lugar de Vacunación
+                - var j = 0;
+                each val in data[i].vacunas
+                  tr
+                    td.conBorde #{data[i].vacunas[j].fecha}
+                    td.conBorde #{data[i].vacunas[j].dosis}
+                    td.conBorde #{data[i].vacunas[j].vacuna}
+                    td #{data[i].vacunas[j].departamento}
+                  - j++
+        td#reverso(class=`dimentions reverso_${i}` style=`height: ${data[i].carnet.alto}cm; width: ${data[i].carnet.ancho}cm;`)
+          table
+            tr
+              th#arealogoReverso
+                img#logoReverso(src='img/modelo_2/franja_botom.png')
+              th#areaQr
+                if data[i].vacunacion
+                  - var qr = `data:image/png;base64,${data[i].qrB64}`;
+                  img.imageQR(src=qr, alt="no QR")
+                else
+                  div(id=`qrcode${i}`)
+                  input(id=`inputHidde${i}` type='hidden' value=`${data[i].qrB64}`)
+                  script(src="js/qrcode.min.js")
+                  script.
+                    document.addEventListener("DOMContentLoaded", function(event) { 
+                      const data    = !{JSON.stringify(data)}
+                      console.log(data)
+                      var urlQr = document.getElementById("inputHidde#{i}").value;
+                      // console.log('urlQr', urlQr);
+                      var qrcode = {
+                        text: urlQr,
+                        width: 144, //144
+                        height: 144, //144
+                        colorDark : "#000000",
+                        colorLight : "#ffffff",
+                        correctLevel : QRCode.CorrectLevel.L // L M Q H
+                      };
+                      // document.getElementsByClassName(`cara_#{i}`)[0].style.height=`${parseFloat(data["#{i}"].carnet.alto.replace(/,/g, ".")).toFixed(2)}cm`;
+                      // document.getElementsByClassName(`reverso_#{i}`)[0].style.height=`${parseFloat(data["#{i}"].carnet.alto.replace(/,/g, ".")).toFixed(2)}cm`;
+                      // document.getElementsByClassName(`cara_#{i}`)[0].style.width=`${parseFloat(data["#{i}"].carnet.ancho.replace(/,/g, ".")).toFixed(2)}cm`;
+                      // document.getElementsByClassName(`reverso_#{i}`)[0].style.width=`${parseFloat(data["#{i}"].carnet.ancho.replace(/,/g, ".")).toFixed(2)}cm`;
+                      
+                      new QRCode(document.getElementById("qrcode#{i}"),qrcode);
+                    });
+
+      - i++

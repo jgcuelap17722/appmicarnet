@@ -41,24 +41,28 @@ io.on('connection', (sk_formRegister) => {
     }
   })
   sk_formRegister.on('obtenerVacunasYQR', async (data) => {
-    const date = data.fechaNacimiento.split('/');
-    const fechaNacimineto = `${date[2]}-${date[1]}-${date[0]}`;
-    const queryGetVacunas = `CALL SP_GenerarBacunas(
-      '${fechaNacimineto}',
+    // const date = data.fechaNacimiento.split('/');
+    // const fechaNacimineto = `${date[2]}-${date[1]}-${date[0]}`;
+    const queryGetVacunas = `CALL SP_GenerarBacunasv2(
       ${parseInt(data.dosis)},
-      '${data.departamento}');`;
+    '${data.departamento}',0);`;
 
     const resQueryGetVacunas = await pool.query(queryGetVacunas);
     const vacunas = resQueryGetVacunas[0];
     console.log('Mis bacunas truchas ENTRADA', vacunas);
-    vacunas.forEach(ele => {
-      ele.fecha = helpers.dateIsoToString(ele.fecha);
+
+    const fechasVacunas = helpers.generarFechasDeVacunacion(data.fechaUltimaVacuna, data.dosis);
+
+    vacunas.forEach((ele, i) => {
+      ele.fecha = fechasVacunas[i].fecha;
+      ele.dosis = `${i+1}${ele.dosis}`;
     });
     console.log('Mis bacunas truchas SALIDA', vacunas);
     const qrB64 = helpers.crearUrlClienteNoVacunado(data.dni);
     const ouput = {vacunas, qrB64};
     sk_formRegister.emit('recibirVacunasYQR', ouput)
   })
+  
   ss(sk_formRegister).on('file', async (stream, data) => {
     console.log('Subiendo_', data);
     let pathPDF = `${process.cwd()}\\downloads\\documents\\${Date.now()}_${data.name}`;

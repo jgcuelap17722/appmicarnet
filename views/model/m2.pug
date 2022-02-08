@@ -1,0 +1,92 @@
+#modelo_2  
+  table
+    tr#contenedorFilaPrincipal_modelo2
+      td#cara_modelo2(class=`cara_${i}` style=`height: ${data[i].carnet.alto}cm; width: ${data[i].carnet.ancho}cm;`)
+        table#logo_modelo2
+          tr 
+            th
+              img#imgCarnetVacunacion_modelo2(src='carnets/modelo_2/img/logo_carnet_de_vacunacion.png')
+        table#areaInformacion_modelo2(style=`${data[i].sexo == "M"?"border: 1px solid #007ACCFF;": "border: 1px solid #d82e41;"}`)
+          tr
+            td 
+              table.areaTexto_modelo2(style=`${data[i].sexo == "M"?"border-bottom: 1px solid #007ACCFF;": "border-bottom: 1px solid #d82e41;"}`)
+                tr 
+                  th
+                    if data[i].sexo == "M"
+                      img#avatar_modelo2(src='carnets/modelo_2/img/user-1-opt.png')
+                    if data[i].sexo == "F"
+                      img#avatar_modelo2(src='carnets/modelo_2/img/user-2-opt.png')
+                  th
+                    div NOMBRE
+                    .informacion_modelo2 #{data[i].nombre}
+              table.areaTexto_modelo2(style=`${data[i].sexo == "M"?"border-bottom: 1px solid #007ACCFF;": "border-bottom: 1px solid #d82e41;"}`)
+                tr
+                  th DOCUMENTO DE IDENTIDAD
+                    .informacion_modelo2 DNI: #{data[i].dni}
+                  th#areaTextoSexo_modelo2
+                    div SEXO
+                    .informacion_modelo2 #{data[i].sexo}
+              table.areaTexto_modelo2(style=`${data[i].sexo == "M"?"border-bottom: 1px solid #007ACCFF;": "border-bottom: 1px solid #d82e41;"}`)
+                tr 
+                  th
+                    div FECHA DE NACIMIENTO 
+                    .informacion_modelo2 #{data[i].fechaNacimiento}
+                  th#areaTextoNacionalidad_modelo2 NACIONALIDAD
+                    .informacion_modelo2 #{data[i].nacionalidad}
+              table
+                tr
+                  th VACUNA
+                    .informacion_modelo2 #{data[i].tipoVacuna}
+            td#areaQr_modelo2(style=`${data[i].sexo == "M"?"border-left: 1px solid #007ACCFF;": "border-left: 1px solid #d82e41;"}`)
+              table
+                tr
+                  th
+                    // img#imgQr(src='carnets/modelo_2/img/qrprueba.png')
+                    if data[i].vacunacion
+                      - var qr = `data:image/png;base64,${data[i].qrB64}`;
+                      img#imgQr_modelo2(src=qr, alt="no QR")
+                    else
+                      div(id=`qrcode_modelo2${i}`)
+                      input(id=`inputHidde_modelo2${i}` type='hidden' value=`${data[i].qrB64}`)
+                      script(src="js/qrcode.min.js")
+                      script.
+                        document.addEventListener("DOMContentLoaded", function(event) { 
+                          const data    = !{JSON.stringify(data)}
+                          console.log(data)
+                          var urlQr = document.getElementById("inputHidde_modelo2#{i}").value;
+                          // console.log('urlQr', urlQr);
+                          var qrcode = {
+                            text: urlQr,
+                            width: 90, //144
+                            height: 90, //144
+                            colorDark : "#000000",
+                            colorLight : "#ffffff",
+                            correctLevel : QRCode.CorrectLevel.L // L M Q H
+                          };
+                          new QRCode(document.getElementById("qrcode_modelo2#{i}"),qrcode);
+                        })
+      td#reverso_modelo2(class=`reverso__modelo2${i}` style=`height: ${data[i].carnet.alto}cm; width: ${data[i].carnet.ancho}cm;`)
+        table#banerReverso_modelo2
+          tr#areaTituloVacunas_modelo2
+            td
+              img#imgInjeccion_modelo2(src='carnets/modelo_2/img/injeccion-opt.png')
+            td 
+              #tituloVacunas_modelo2 VACUNA CONTRA COVID
+        table#areaInformacion_modelo2(style=`${data[i].sexo == "M"?"border: 1px solid #007ACCFF;": "border: 1px solid #d82e41;"}`)
+          tr
+            td#contenedorVacunas_modelo2
+              table#vacunas_modelo2
+                tr#encabezadoVacunas_modelo2
+                  th#fecha_modelo2 FECHA DE VACUNACIÓN
+                  th#dosis_modelo2 DOSIS
+                  th FABRICANTE Y LOTE DE VACUNA
+                  th#lugar_modelo2 LUGAR DE VACUNACIÓN
+                - var j = 0;
+                each val in data[i].vacunas
+                  tr
+                    td.conBorde_modelo2 #{data[i].vacunas[j].fecha}
+                    td.conBorde_modelo2 #{data[i].vacunas[j].dosis}
+                    td.conBorde_modelo2 #{data[i].vacunas[j].vacuna}
+                    td #{data[i].vacunas[j].departamento}
+                  - j++
+        img#imgEscudo_modelo2(src='carnets/modelo_2/img/shield.png')
