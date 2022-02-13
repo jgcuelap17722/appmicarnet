@@ -87,15 +87,24 @@ html(lang="es")
             div
               b DNI
               |  #{dni}
-            if nroDosis < 2
+            if nroDosis == 1
               div(style="color:#dead28")
                 b DOSIS INCOMPLETA *
-            else
+            if nroDosis == 2
               div(style="color:#3e8d5e")
-                b DOSIS COMPLETA
-        if nroDosis < 2
+                b CON SEGUNDA DOSIS *
+            if nroDosis == 3
+              div(style="color:#3e8d5e")
+                b CON PRIMER REFUERZO *
+        if nroDosis == 1
           div(style="padding: 0.7rem 0 0.5rem; text-align: center;")
             div(style="font-size: 1rem;padding:0.5rem;background: rgba(255,255,255, 0.7);") * Persona con sólo una dosis de vacuna contra COVID 19
+        if nroDosis == 2
+          div(style="padding: 0.7rem 0 0.5rem; text-align: center;")
+            div(style="font-size: 1rem;padding:0.5rem;background: rgba(255,255,255, 0.7);") * Persona con dos dosis de vacuna contra COVID 19
+        if nroDosis == 3
+          div(style="padding: 0.7rem 0 0.5rem; text-align: center;")
+            div(style="font-size: 1rem;padding:0.5rem;background: rgba(255,255,255, 0.7);") * Persona con dos dosis + la primera dosis de refuerzo de vacuna contra COVID 19
         hr.aLine1
         .text-center(style="color:#6c6c6c")
           | Copyright © 2021. Desarrollado por la Oficina General de Tecnologías de la Información del Ministerio de Salud | Todos los derechos reservados.
