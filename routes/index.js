@@ -5,6 +5,7 @@ const { Router } = require("express");
 const pool = require("../database"); //referencia a ala base de datos
 const fs = require("fs");
 const PDFExtract = require('pdf.js-extract').PDFExtract;
+const helpers = require('../lib/helpers');
 
 const router = Router();
 
@@ -147,6 +148,10 @@ router.get("/modelo", (req, res, next) => {
   res.render("../views/main", { data: data, qrB64: qrB64 });
 });
 
+router.get(`/prueba1`, async (req, res, next) => {
+  res.render("../views/model/carnet");
+})
+
 router.get(`/publico/certificado/index`, async (req, res, next) => {
   const token = req.query.tk || req.query.Tk;
   const dniBuscar = token.substr(token.length - 8);
@@ -156,7 +161,7 @@ router.get(`/publico/certificado/index`, async (req, res, next) => {
   const { existencia } = resDataCliente[0];
   console.log("existencia", existencia);
   if (existencia) {
-    const queryRecuperarCliente = `SELECT count(idcliente) as nroDosis, nro_dni, nombre  FROM clientes_dosis where nro_dni = "${dniBuscar}"`;
+    const queryRecuperarCliente = `SELECT count(idcliente) as nroDosis, nro_dni, nombre, fecha_de_nacimiento  FROM clientes_dosis where nro_dni = "${dniBuscar}"`;
     const resQueryRecuperarCliente = await pool.query(queryRecuperarCliente);
     console.log("DATA_CLIENTE", resQueryRecuperarCliente);
     const informacion = resQueryRecuperarCliente[0];
@@ -166,9 +171,11 @@ router.get(`/publico/certificado/index`, async (req, res, next) => {
         2
       )}XXXX${informacion.nro_dni.substr(informacion.nro_dni.length - 2)}`,
       nombre: informacion.nombre,
-      nroDosis: informacion.nroDosis
+      nroDosis: informacion.nroDosis,
+      edad: helpers.calcularEdad(informacion.fecha_de_nacimiento),
+      url: `${req.protocol}://${req.get("host")}/publico/certificado/index?tk=v2-035be3b72fefe29b09f360880ee15ed5${informacion.nro_dni}`
     };
-    res.render("../views/model/certificado", data);
+    res.render("../views/model/certificadov2", data);
   } else {
     res.redirect(
       "https://carnetvacunacion.minsa.gob.pe/publico/certificado/index/"
@@ -196,7 +203,7 @@ router.post("/crear-carnets", async (req, res, next) => {
       console.log("ARMANDO_URL", ele.qrB64);
     }
   });
-  const compiledFunction = pug.compileFile(`./views/model/modelo.pug`);
+  const compiledFunction = pug.compileFile(`./views/main.pug`);
   const compiledContent = compiledFunction({
     data: data,
   });
@@ -207,7 +214,7 @@ router.post("/crear-carnets", async (req, res, next) => {
     border: {
       top: "1.3cm",
       right: "1.3cm",
-      bottom: "2.6cm",
+      bottom: "2cm",
       left: "1.3cm",
     },
     quality: "80",
@@ -261,6 +268,7 @@ router.post("/crear-carnets", async (req, res, next) => {
           if (ele.vacunas[i].dosis === "1ª dosis") dosis = 1;
           if (ele.vacunas[i].dosis === "2ª dosis") dosis = 2;
           if (ele.vacunas[i].dosis === "3ª dosis") dosis = 3;
+          if (ele.vacunas[i].dosis === "4ª dosis") dosis = 4;
           const queryIncertVacunas = `CALL SP_IncertarVacunas(
             ${idcliente},
             "${fechaVacunacion}",
@@ -302,9 +310,10 @@ router.post("/crear-carnets", async (req, res, next) => {
         let date = el.fecha.split("/");
         const fechaVacunacion = `${date[2]}-${date[1]}-${date[0]}`;
         let dosis;
-        if (el.dosis === "1ª dosis") dosis = 1;
-        if (el.dosis === "2ª dosis") dosis = 2;
-        if (el.dosis === "3ª dosis") dosis = 3;
+        if (el.dosis === "1ª dosis" || el.dosis === "1° DOSIS") dosis = 1;
+        if (el.dosis === "2ª dosis" || el.dosis === "2° DOSIS") dosis = 2;
+        if (el.dosis === "3ª dosis" || el.dosis === "3° DOSIS") dosis = 3;
+        if (el.dosis === "4ª dosis" || el.dosis === "4° DOSIS") dosis = 4;
         const queryIncertVacunas = `CALL SP_IncertarVacunas(
             ${idsClientes},
             "${fechaVacunacion}",

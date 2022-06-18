@@ -1,0 +1,689 @@
+doctype html
+// saved from url=(0056)https://carnetvacunacion.minsa.gob.pe/#/verify-qr/result
+html#-html(lang="en" style="min-height: 100%; position: relative; overflow: initial")
+  head
+    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    link(rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="")
+    title MINSA - Carnet Vacunación
+    // <base href="/">
+    base(href=".")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="icon" type="image/png" href="https://carnetvacunacion.minsa.gob.pe/icon.png")
+    meta(property="og:title" content="MINSA - Carnet Vacunación")
+    meta(name="description" content="Puedes verificar la aplicación de tu vacuna contra el coronavirus u otras que hayas recibido recientemente en el Carnet de vacunación web del Ministerio de Salud. Aquí, está registrada la fecha y lugar donde se te inmunizó, además del tipo de vacuna que recibiste, el fabricante de la vacuna y el número de lote.")
+    meta(name="keywords" content="Carnet Vacunas, Minsa, Covid19")
+    meta(property="og:image" content="https://consultas-dev.sc.minsa.mvpdemoapp.com/assets/logo.png")
+    meta(property="og:url" content="https://consultas-dev.sc.minsa.mvpdemoapp.com/")
+    meta(property="og:type" content="website")
+    style(type="text/css").
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+      U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+      U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2)
+      format("woff2");
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2)
+      format("woff2");
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+      U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+      U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2)
+      format("woff2");
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+      U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+      U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    style(type="text/css").
+      @font-face {
+      font-family: "Material Icons";
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://fonts.gstatic.com/s/materialicons/v129/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2)
+      format("woff2");
+      }
+      .material-icons {
+      font-family: "Material Icons";
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: "liga";
+      -webkit-font-smoothing: antialiased;
+      }
+    link(rel="stylesheet" href="../../CARNET_files/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer")
+    script(src="../../CARNET_files/navegador.js.descarga")
+    style.
+      @import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
+      *,
+      :before,
+      :after {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb;
+      }
+      :before,
+      :after {
+      --tw-content: "";
+      }
+      html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol,
+      "Noto Color Emoji";
+      }
+      body {
+      margin: 0;
+      line-height: inherit;
+      }
+      *,
+      :before,
+      :after {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      }
+      * {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      }
+      body {
+      min-height: 100%;
+      }
+      html {
+      height: 100%;
+      }
+      * {
+      font-family: Roboto, sans-serif;
+      }
+    link(rel="stylesheet" href="../../CARNET_files/styles.23a7e64a5f5cbd91.css" media="all" /*onload="this.media=&#39;all&#39;"*/)
+    noscript
+      link(rel="stylesheet" href="styles.23a7e64a5f5cbd91.css")
+    script(async="" src="../../CARNET_files/js")
+    style(type="text/css").
+      @font-face {
+      font-family: Roboto;
+      src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf");
+      }
+    style
+    style.
+      .mat-select {
+      display: inline-block;
+      width: 100%;
+      outline: none;
+      }
+      .mat-select-trigger {
+      display: inline-table;
+      cursor: pointer;
+      position: relative;
+      box-sizing: border-box;
+      }
+      .mat-select-disabled .mat-select-trigger {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      cursor: default;
+      }
+      .mat-select-value {
+      display: table-cell;
+      max-width: 0;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      }
+      .mat-select-value-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .mat-select-arrow-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+      }
+      .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+      transform: translateY(-50%);
+      }
+      .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+      transform: translateY(-25%);
+      }
+      .mat-form-field-appearance-standard.mat-form-field-has-label
+      .mat-select:not(.mat-select-empty)
+      .mat-select-arrow-wrapper {
+      transform: translateY(-50%);
+      }
+      .mat-form-field-appearance-standard
+      .mat-select.mat-select-empty
+      .mat-select-arrow-wrapper {
+      transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      ._mat-animation-noopable.mat-form-field-appearance-standard
+      .mat-select.mat-select-empty
+      .mat-select-arrow-wrapper {
+      transition: none;
+      }
+      .mat-select-arrow {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid;
+      margin: 0 4px;
+      }
+      .mat-select-panel-wrap {
+      flex-basis: 100%;
+      }
+      .mat-select-panel {
+      min-width: 112px;
+      max-width: 280px;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-top: 0;
+      padding-bottom: 0;
+      max-height: 256px;
+      min-width: 100%;
+      border-radius: 4px;
+      outline: 0;
+      }
+      .cdk-high-contrast-active .mat-select-panel {
+      outline: solid 1px;
+      }
+      .mat-select-panel .mat-optgroup-label,
+      .mat-select-panel .mat-option {
+      font-size: inherit;
+      line-height: 3em;
+      height: 3em;
+      }
+      .mat-form-field-type-mat-select:not(.mat-form-field-disabled)
+      .mat-form-field-flex {
+      cursor: pointer;
+      }
+      .mat-form-field-type-mat-select .mat-form-field-label {
+      width: calc(100% - 18px);
+      }
+      .mat-select-placeholder {
+      transition: color 400ms 133.3333333333ms
+      cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      ._mat-animation-noopable .mat-select-placeholder {
+      transition: none;
+      }
+      .mat-form-field-hide-placeholder .mat-select-placeholder {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      transition: none;
+      display: block;
+      }
+      .mat-select-min-line:empty::before {
+      content: " ";
+      white-space: pre;
+      width: 1px;
+      display: inline-block;
+      opacity: 0;
+      }
+    style.
+      .mat-option {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      line-height: 48px;
+      height: 48px;
+      padding: 0 16px;
+      text-align: left;
+      text-decoration: none;
+      max-width: 100%;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      flex-direction: row;
+      max-width: 100%;
+      box-sizing: border-box;
+      align-items: center;
+      -webkit-tap-highlight-color: transparent;
+      }
+      .mat-option[disabled] {
+      cursor: default;
+      }
+      [dir="rtl"] .mat-option {
+      text-align: right;
+      }
+      .mat-option .mat-icon {
+      margin-right: 16px;
+      vertical-align: middle;
+      }
+      .mat-option .mat-icon svg {
+      vertical-align: top;
+      }
+      [dir="rtl"] .mat-option .mat-icon {
+      margin-left: 16px;
+      margin-right: 0;
+      }
+      .mat-option[aria-disabled="true"] {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      cursor: default;
+      }
+      .mat-optgroup .mat-option:not(.mat-option-multiple) {
+      padding-left: 32px;
+      }
+      [dir="rtl"] .mat-optgroup .mat-option:not(.mat-option-multiple) {
+      padding-left: 16px;
+      padding-right: 32px;
+      }
+      .cdk-high-contrast-active .mat-option {
+      margin: 0 1px;
+      }
+      .cdk-high-contrast-active .mat-option.mat-active {
+      border: solid 1px currentColor;
+      margin: 0;
+      }
+      .cdk-high-contrast-active .mat-option[aria-disabled="true"] {
+      opacity: 0.5;
+      }
+      .mat-option-text {
+      display: inline-block;
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .mat-option .mat-option-ripple {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      pointer-events: none;
+      }
+      .mat-option-pseudo-checkbox {
+      margin-right: 8px;
+      }
+      [dir="rtl"] .mat-option-pseudo-checkbox {
+      margin-left: 8px;
+      margin-right: 0;
+      }
+    style.
+      [_nghost-bhg-c72] {
+      display: block;
+      }
+      video[_ngcontent-bhg-c72] {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      }
+  body#-body(style="height: 100%; overflow: initial" translate="no")
+    app-root(ng-version="13.1.3")
+      router-outlet
+      app-verify-qr(class="ng-star-inserted")
+        div(class="grid-container h-full" style="height: 100%")
+          app-header(class="navbar bg-buttonprimary" _nghost-bhg-c76="")
+            nav(_ngcontent-bhg-c76="" class="fixed top-0 z-50 w-full flex flex-wrap items-center justify-between pt-[10px] pb-[10px] bg-buttonprimary text-gray-200 shadow-lg navbar navbar-expand-lg navbar-light paddingleft paddingright h-[64px]")
+              div(_ngcontent-bhg-c76="" class="w-full sm:container mx-auto flex flex-wrap items-center justify-between px-4 sm:px-8 lg:px-10 2xl:px-0")
+                a(_ngcontent-bhg-c76="" class="cursor-pointer flex")
+                  img(_ngcontent-bhg-c76="" src="../../CARNET_files/LogoMinsa.svg" alt="" class="mr-3 w-[200px]")
+                // 
+                // 
+                div(_ngcontent-bhg-c76="" class="flex justify-between items-center w-full md:w-auto md:order-1 z-30")
+              // 
+          div(class="main h-full")
+            router-outlet
+            app-result(class="ng-star-inserted")
+              div(class="main h-full ng-star-inserted")
+                div(class="grid lg:grid-cols-2 lg:h-full")
+                  div(class="lg:bg-gray-100 flex justify-center lg:justify-end")
+                    div(class="w-full md:w-[759px] lg:w-[505px] xl:w-[634px] 2xl:w-[759px] lg:items-center" style="display: flex; flex-direction: column")
+                      div(class="pt-4 sm:pt-8 lg:pt-[122px] px-4 sm:px-8 lg:px-10 2xl:px-0 2xl:w-9/12 md:sticky md:top-[0]")
+                        img(src="../../CARNET_files/carnet.png" alt="" class="lg:pt-9 w-2/4 md:w-auto hidden lg:flex")
+                        div(class="hidden lg:block")
+                          div(role="alert" class="shadow drop-shadow-md flex items-center mt-[30px] lg:mt-[30px] p-4 mb-[30px] lg:mb-[30px] text-xs xl:text-base leading-6 w-full md:w-[400px]")
+                            div(class="text-base font-bold w-[70%]")
+                              | Verifica la validez de
+                              br
+                              | un código QR
+                            div(class="bg-buttonprimary w-[30%] flex justify-center items-center py-1")
+                              div
+                                span(translate="no" class="material-icons flex justify-center w-full text-6xl text-white")
+                                  | qr_code
+                                span(class="text-white") LECTOR QR
+                          div(class="relative flex boton mt-[30px]")
+                            button(class="button-secundary underline h-[48px] lg:h-[54px] text-base lg:text-[18px]" onclick="window.location.href='https://carnetvacunacion.minsa.gob.pe/';")
+                              | Regresar al inicio
+                  div(class="flex justify-center lg:justify-start")
+                    div(class="w-full md:w-[759px] lg:w-[505px] xl:w-[634px] 2xl:w-[759px] paddingright flex justify-center lg:py-6 px-4 sm:px-8 lg:px-10 2xl:px-0")
+                      div(class="w-full lg:w-[351px] xl:w-[500px] lg:pt-9")
+                        div(class="w-full sm:w-[340px] bg-white drop-shadow-md rounded-t-xl rounded-b-xl grid")
+                          div(class="px-8 pt-6")
+                            div(class="flex justify-center")
+                              img(src="../../CARNET_files/carnet.png" alt="" class="w-2/4")
+                            div
+                              qr-code(class="flex justify-center mt-4")
+                                div(id=`qrcode`)
+                                // img(height="183" width="183" src="data:image/png;base64,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")
+                            div(class="flex justify-center")
+                              span(class="font-extrabold text-textos text-[22px] xl:leading-[28px] uppercase mt-4 text-center")
+                                | #{nombre}
+                            div(class="flex justify-between mt-4")
+                              span(class="font-semibold text-base")
+                                span(class="text-sm font-normal") DNI: 
+                                | #{dni}
+                              span(class="font-semibold text-base")
+                                span(class="text-sm font-normal") Edad:
+                                | #{edad} AÑOS
+                            hr(class="mt-3" style="color: rgb(121, 171, 63)")
+                            div(class="text-center")
+                              h3(class="mt-2 text-pressed text-[18px] font-semibold")
+                                | VACUNACIÓN COVID-19
+                              h3(class="text-[28px] font-extrabold mb-1" style="color: rgb(121, 171, 63)")
+                                if nroDosis == 1
+                                  | DOSIS INCOMPLETA *
+                                if nroDosis == 2
+                                  | CON SEGUNDA DOSIS
+                                if nroDosis == 3
+                                  | CON TERCERA DOSIS
+                                if nroDosis == 4
+                                  | CON CUARTA DOSIS
+                          div(class="rounded-b-xl" style="background: rgb(121, 171, 63)")
+                            div(class="h-[64px] flex items-center justify-between px-8" style="border-radius: 0% 0% 0.75rem 0.75rem")
+                              h4(class="text-white text-[30px]") Dosis
+                              - var d = 0;
+                              while d < nroDosis
+                                img(alt="dosses" src="../../CARNET_files/check.svg" class="ng-star-inserted")
+                                - d++ 
+                              // img(alt="dosses" src="../../CARNET_files/check.svg" class="ng-star-inserted")
+                              // img(alt="dosses" src="../../CARNET_files/check.svg" class="ng-star-inserted")
+                              // 
+                        div(class="pt-[30px]")
+                        // 
+                        div(class="block lg:hidden")
+                          div(routerlink="/verify-qr" role="alert" class="shadow-md drop-shadow-md flex items-center p-4 mb-[30px] text-xs xl:text-base leading-6 w-full md:w-[400px]" tabindex="0")
+                            div(class="text-base text-textos font-semibold w-[70%]")
+                              | Verifica la
+                              br
+                              | validez de un
+                              br
+                              | código QR
+                            div(class="bg-buttonprimary w-[60%] lg:w-[30%] flex justify-center items-center py-1")
+                              div
+                                span(translate="no" class="material-icons flex justify-center w-full text-6xl text-white")
+                                  | qr_code
+                                span(class="text-gris3")  LECTOR QR 
+                          div(class="relative flex justify-center boton mt-[30px]")
+                            button(type="button" class="mb-[60px] md:mb-16 transition duration-150 ease-in-out w-full cursor-pointer lg:max-w-[400px] font-normal flex items-center justify-center text-center rounded bg-transparent text-buttonprimary px-6 text-sm xl:text-lg underline")
+                              | Regresar al inicio
+              // 
+              // 
+              // 
+              // 
+              app-footer(class="footer")
+                div(class="h-[168px] md:h-[100px] paddingleft paddingright py-3 bg-textos flex items-center w-full" style="width: 100%")
+                  div(class="w-full bg-textos sm:container mx-auto px-4 sm:px-8 lg:px-10 2xl:px-0")
+                    p(class="text-footertext text-xs lg:text-sm lg:leading-[22px] tracking-[0.25px] mt-[20px]")
+                      | Copyright © 2022. Desarrollado por la Oficina General de
+                      | Tecnologías de la Información del Ministerio de Salud.
+                    div(class="grid md:flex justify-between mb-[28px]")
+                      p(class="text-footertext text-xs lg:text-sm lg:leading-[22px] underline cursor-pointer mt-[16px] lg:mt-[8px] tracking-[0.25px]")
+                        | Política de Privacidad y Términos y Condiciones.
+                      p(class="text-footertext text-xs lg:text-sm lg:leading-[22px] mt-[16px] lg:mt-[8px] tracking-[0.25px]")
+                        | Todos los derechos reservados.
+    // script(src="../../CARNET_files/runtime.006a387c652e70c9.js.descarga" type="module")
+    // script(src="../../CARNET_files/polyfills.bf48b4cfb3d70be2.js.descarga" type="module")
+    // script(src="../../CARNET_files/scripts.b8950142c82c6d1a.js.descarga" defer="")
+    // script(src="../../CARNET_files/main.ece87bcd1de0f36a.js.descarga" type="module")
+    input(id=`inputHidde` type='hidden' value=`${url}`)
+    script(src="../../js/qrcode.min.js")
+    script.
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        // const data    = !{JSON.stringify(data)}
+        // console.log(data)
+        var urlQr = document.getElementById("inputHidde").value;
+        // console.log('urlQr', urlQr);
+        var qrcode = {
+          text: urlQr,
+          width: 183, //144
+          height: 183, //144
+          colorDark : "#000000",
+          colorLight : "#ffffff",
+          correctLevel : QRCode.CorrectLevel.L // L M Q H
+        };
+        new QRCode(document.getElementById("qrcode"),qrcode);
+      })
+    div(class="cdk-live-announcer-element cdk-visually-hidden" aria-atomic="true" aria-live="polite")
+    div(class="cdk-overlay-container")

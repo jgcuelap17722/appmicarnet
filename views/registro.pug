@@ -64,6 +64,7 @@ html(lang="en")
                   option(value='1') 1ª dosis
                   option(value='2' selected) 2ª dosis
                   option(value='3') 3ª dosis
+                  option(value='4') 4ª dosis
               .col-md-3.mb-3
                 label(for='txtDepartamento') Departamento
                 input#txtDepartamento.form-control(type='text' value='CUSCO' placeholder='Departamento')
@@ -85,6 +86,11 @@ html(lang="en")
                 label(for='anchoCarnet') Ancho Carnet ___
                 .d-flex.justify-content-start.align-items-center
                   input#anchoCarnet.form-control(type='number' step='0.01' value='8.00' placeholder='0.00')
+                  label.ml-2 cm
+              .col-md-3.mb-2
+                label(for='separacionCarnet') Separación Carnet
+                .d-flex.justify-content-start.align-items-center
+                  input#separacionCarnet.form-control(type='number' step='0.01' value='0.05' placeholder='0.00')
                   label.ml-2 cm
             input#formData(type="hidden" name="data[]" )
             button#btnLimpiar.btn.btn-secondary(type="button") Limpiar
@@ -226,6 +232,10 @@ html(lang="en")
           const departamentoNuevo = $(`#txt_${dni}_${i}`).val();
           el.departamento = departamentoNuevo;
         })
+        
+        const sexoNuevo = $(`#txt_${dni}_sexo`).val();
+        listaCarnet[indice].sexo = sexoNuevo;
+
         $("#formData").val(JSON.stringify(listaCarnet));
         console.log('listaCarnet_editado_SALIDA:', listaCarnet[indice]);
       }
@@ -287,6 +297,7 @@ html(lang="en")
         // upload a file to the server.
         const altoCarnet = $('#altoCarnet').val();
         const anchoCarnet = $('#anchoCarnet').val();
+        const separacionCarnet = $('#separacionCarnet').val();
         for(let i = 0; i < files.length; i++){
           stream = ss.createStream();
           ss(sk_formRegister).emit('file', stream,
@@ -295,7 +306,8 @@ html(lang="en")
               telefono: $('#telefono').val(),
               carnet: {
                 alto: altoCarnet,
-                ancho: anchoCarnet
+                ancho: anchoCarnet,
+                separator: separacionCarnet
               },
             });
           ss.createBlobReadStream(files[i]).pipe(stream);
@@ -303,7 +315,7 @@ html(lang="en")
       }
       agregarCards = (dataPdf) => {
         listaCarnet.push(dataPdf);
-        console.log('dataPdf', dataPdf)
+        console.log('dataPdf: ', dataPdf)
         const model = `
           <div id="card_${dataPdf.dni}" class="col-md-6 mb-12">
               <div class="card border-success">
@@ -328,12 +340,19 @@ html(lang="en")
               </div>
           </div>`;
         $("#carnets").append(model);
+
         dataPdf.vacunas.forEach((el, i) => {
           $(`#contenedor${dataPdf.dni}`).append(`
           <label for="txt_${dataPdf.dni}_${i}">Lugar de Vacunación (${el.dosis})</label>
           <input id="txt_${dataPdf.dni}_${i}" value="${el.departamento}" class="form-control">
           `);
         })
+
+        $(`#contenedor${dataPdf.dni}`).append(`
+        <label for="txt_${dataPdf.dni}_sexo">Sexo</label>
+        <input id="txt_${dataPdf.dni}_sexo" value="${dataPdf.sexo}" class="form-control">
+        `);
+
         $("#formData").val(JSON.stringify(listaCarnet));
         console.log(listaCarnet);
       }
@@ -404,6 +423,7 @@ html(lang="en")
         const fechaNacimiento = $('#fechaNacimiento').val();
         const altoCarnet = $('#altoCarnet').val();
         const anchoCarnet = $('#anchoCarnet').val();
+        const separacionCarnet = $('#separacionCarnet').val();
         // const vacunas = [];
         // const qrB64 = [];
 
@@ -421,7 +441,8 @@ html(lang="en")
           qrB64:data.qrB64, // Obtenemos despues de crear la dirección
           carnet: {
             alto: altoCarnet,
-            ancho: anchoCarnet
+            ancho: anchoCarnet,
+            separator: separacionCarnet
           }
         });
         const model = `              

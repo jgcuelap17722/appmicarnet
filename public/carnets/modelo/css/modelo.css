@@ -5,25 +5,25 @@
   padding: 0px;
   display: flex;
   flex-direction: column;
-  border-radius: 7px;
-  border: 1px solid silver;
-  background-image: url("../img/bgBottomLeft-optw.png"), url("../../modelo_2/img/logo_carnet_de_vacunacion_blanco.png");
-  background-repeat: no-repeat, no-repeat;
-  background-size: 24%, 85%;
-  background-position: bottom left, center;
+  border-radius: 9px;
+  border: 1px solid #e2e2e2;
+  background-image: url("../img/bgBottomLeft-optw.jpg");
+  background-repeat: no-repeat;
+  background-size: 24%;
+  background-position: bottom left;
 }
 
 #reverso {
-  border: 1px solid silver;
-  border-radius: 7px;
+  border: 1px solid #e2e2e2;
+  border-radius: 9px;
   padding: 0px;
   background-color: #cdebed34;
-  background-image: url("../img/bgBottomLeft-optw.png"),
-    url("../img/bgTopLeft-optw.png"),
-    url("../img/bgBottomRight-optw.png"), url("../../modelo_2/img/logo_carnet_de_vacunacion_blanco.png");
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 40% 32%, 38% 50%, 25% 50%, 85%;
-  background-position: bottom left, top left, bottom right, center;
+  background-image: url("../img/bgBottomLeft-optw.jpg"),
+    url("../img/bgTopLeft-optw.jpg"),
+    url("../img/bgBottomRight-optw.jpg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 40% 32%, 38% 50%, 25% 50%;
+  background-position: bottom left, top left, bottom right;
 }
 #datos1,
 #datos2 {
@@ -42,7 +42,7 @@
 }
 #imgHombro {
   position: absolute;
-  top: 53%;
+  /* top: 53%; */
   left: 75%;
   width: 25%;
   transform: translateY(-50%);
@@ -50,10 +50,11 @@
 }
 #imgMinsa {
   position: absolute;
-  top: 50%;
+/*   top: 50%; */
+  top: 10%;
   left: 2%;
   width: 40.5%;
-  transform: translateY(-50%);
+/*   transform: translateY(-50%); */
 }
 
 #datos1 {
@@ -62,7 +63,7 @@
   /*height: 1.1cm;*/
   height: 21.6%;
   padding-bottom: 3px;
-  background-image: url("../img/bgTopLeft-optw.png");
+  background-image: url("../img/bgTopLeft-optw.jpg");
   background-repeat: no-repeat;
   background-size: 15% 80%;
   background-position: top left;
@@ -80,8 +81,9 @@
   border-collapse: collapse;
   /*height: 1.7cm;*/
   height: 38%;
+  width: 100%;
   text-align: center;
-/*   background-image: url("../img/bgTopLeft-optw.png");
+/*   background-image: url("../img/bgTopLeft-optw.jpg");
   background-repeat: no-repeat;
   background-size: 25% 50%;
   background-position: bottom left; */
@@ -153,8 +155,10 @@
 
 #tituloBaner {
   position: absolute;
-  top: 46%;
-  left: 42.5%;
+  /* top: 46%; */
+  top: 4%;
+/*   left: 42.5%; */
+  left: 43%;
   z-index: 3;
   transform: translateY(-50%);
 }
