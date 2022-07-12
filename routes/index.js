@@ -365,7 +365,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
 })
 
 router.get('/upload', (req, res) => {
-  const directory = `${process.cwd()}\\uploads\\`;
+  const directory = `${process.cwd()}/uploads`;
   fs.readdir(directory, (err, files) => {
     if (err) throw err;
     console.log(files);
