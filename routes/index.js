@@ -6,6 +6,7 @@ const pool = require("../database"); //referencia a ala base de datos
 const fs = require("fs");
 const PDFExtract = require('pdf.js-extract').PDFExtract;
 const helpers = require('../lib/helpers');
+const upload = require('../middlewares/cloudinary.js')
 
 const router = Router();
 
@@ -64,7 +65,7 @@ router.get("/modelo", (req, res, next) => {
       // 'url'
       qrB64:
         "https://carnetvacunacion-minsa-gob-pee.herokuapp.com/publico/certificado/index?tk=v2-035be3b72fefe29b09f360880ee15ed5:349a0b59aacb772e32efa698b04c0a6a12fa7944d155f9fa907933bb45006391",
-      carnet : {
+      carnet: {
         modelo: "1",
         alto: "5",
         ancho: "8"
@@ -101,7 +102,7 @@ router.get("/modelo", (req, res, next) => {
       ],
       // 'url'
       qrB64: "https://carnetvacunacion-minsa-gob-pee.herokuapp.com/publico/certificado/index?tk=v2-035be3b72fefe29b09f360880ee15ed5:349a0b59aacb772e32efa698b04c0a6a12fa7944d155f9fa907933bb74316548",
-      carnet : {
+      carnet: {
         modelo: "2",
         alto: "5",
         ancho: "8"
@@ -131,8 +132,8 @@ router.get("/modelo", (req, res, next) => {
         },
       ],
       // 'url'
-      qrB64:"https://carnetvacunacion-minsa-gob-pee.herokuapp.com/publico/certificado/index?tk=v2-035be3b72fefe29b09f360880ee15ed5:349a0b59aacb772e32efa698b04c0a6a12fa7944d155f9fa907933bb43543516",
-      carnet : {
+      qrB64: "https://carnetvacunacion-minsa-gob-pee.herokuapp.com/publico/certificado/index?tk=v2-035be3b72fefe29b09f360880ee15ed5:349a0b59aacb772e32efa698b04c0a6a12fa7944d155f9fa907933bb43543516",
+      carnet: {
         modelo: "3",
         alto: "5.5",
         ancho: "8.3"
@@ -356,6 +357,22 @@ router.get("/download", function (req, res, next) {
     }); */
   res.download(directory);
 });
+
+router.post('/upload', upload.single('file'), (req, res) => {
+  const fileUpload = req.file;
+  console.log(fileUpload);
+  return res.status(200).json(fileUpload);
+})
+
+router.get('/upload', (req, res) => {
+  const directory = `${process.cwd()}\\uploads\\`;
+  fs.readdir(directory, (err, files) => {
+    if (err) throw err;
+    console.log(files);
+    /* res.render("download", { data: files }); */
+    return res.status(200).json(files);
+  });
+})
 
 /* router.get("/pdf", async (req, res, next) => {
   let dataBuffer = fs.readFileSync(
